@@ -39,7 +39,7 @@ export const Photo = ({
   const [loaded, setLoaded] = useState(false);
   const [inView, setInView] = useState(loading === "eager");
   const ref = useRef<HTMLElement>(null);
-  const url = `/photos/${src}`;
+  const url = `${import.meta.env.BASE_URL}photos/${src}`;
   const ctx = useContext(LightboxContext);
 
   // IntersectionObserver-driven lazy mount

@@ -48,7 +48,7 @@ export const LightboxProvider = ({ children }: Props) => {
     [-1, 1].forEach((d) => {
       const i = (activeIdx + d + list.length) % list.length;
       const img = new Image();
-      img.src = `/photos/${list[i]}`;
+      img.src = `${import.meta.env.BASE_URL}photos/${list[i]}`;
     });
   }, [open, activeIdx, list]);
 
@@ -181,7 +181,7 @@ export const LightboxProvider = ({ children }: Props) => {
           >
             <img
               key={current}
-              src={`/photos/${current}`}
+              src={`${import.meta.env.BASE_URL}photos/${current}`}
               alt=""
               onClick={(e) => { e.stopPropagation(); setChromeVisible((v) => !v); }}
               className="max-w-[96vw] max-h-full object-contain shadow-[0_40px_120px_-20px_rgba(0,0,0,0.9)] cursor-zoom-out select-none"
@@ -231,7 +231,7 @@ export const LightboxProvider = ({ children }: Props) => {
                       aria-label={`第 ${i + 1} 张`}
                     >
                       <img
-                        src={`/photos/${src}`}
+                        src={`${import.meta.env.BASE_URL}photos/${src}`}
                         alt=""
                         loading="lazy"
                         className="w-full h-full object-cover"
